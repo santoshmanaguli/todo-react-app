@@ -1,12 +1,14 @@
-function App() {
+import { Route, Routes } from "react-router-dom";
+import Login from "./components/Login/Login";
 
+function App() {
   return (
     <>
-      <div>
-        Hello world
-      </div>
+      <Routes>
+        <Route path="/login" element={<Login />}></Route>
+      </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
