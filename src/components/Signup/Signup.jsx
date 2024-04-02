@@ -1,12 +1,17 @@
 import { useState } from "react";
+import useNavigate from "react-router-dom";
+
 
 const Signup = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const[fullname, setFullname] = useState();
 
+  const navigate = useNavigate();
+
+
   function createAccount() {
-    console.log("account created");
+    console.log("account created", email, password, fullname);
   }
 
   return (
@@ -59,10 +64,10 @@ const Signup = () => {
           </div>
           <div className="login-btn" style={{ gap: "20px" }}>
             <br />
-            <button type="createAccount" className="btn login-btn">
+            <button type="submit" className="btn login-btn">
               Signup
             </button>
-            <button className="btn signup-btn">Login</button>
+            <button className="btn signup-btn" onClick={() => {navigate('/login')}}>Login</button>
           </div>
         </form>
       </div>
